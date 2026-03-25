@@ -537,7 +537,7 @@ async def main() -> None:
             "ACCESS_TOKEN and GITHUB_ACTOR environment variables cannot be None!"
         )
     async with aiohttp.ClientSession() as session:
-        s = Stats(user, access_token, session)
+        ss = Stats(user, access_token, session, exclude_langs={"HTML"})
         print(await s.to_str())
 
 
